@@ -6,12 +6,13 @@ body {
     font-family: Arial;
     font-size: 17px;
     position: relative;
+    background-color: #CCC;    
 }
 #nav {
     background-color: #222;
 }
 #nav_wrapper { 
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
     text-align: left;
 }
@@ -21,6 +22,13 @@ body {
     margin: 0;
     position: relative;
     min-width: 200px;
+    display: flex;
+}
+@media (max-width: 380px) {
+    #nav ul {
+        flex-direction: column;
+        align-items: center;
+    }    
 }
 #nav ul li {
     display: inline-block;
@@ -33,7 +41,7 @@ body {
 #nav ul li a, visited {
     color: #CCC;
     display: block;
-    padding: 15px;
+    padding: 10px 15px;
     text-decoration: none;
 }
 #nav ul li:hover ul {
@@ -46,6 +54,7 @@ body {
     border: 5px solid #222;
     border-top: 0;
     margin-left: -5px;
+    min-width: 139px;
 }
 #nav ul ul li {
     display: block;
@@ -55,15 +64,18 @@ body {
     font-weight: bold;
 }
 
+
 article {
-    background-color: #CCC;
     margin: 0 auto;
     padding-top: 64px;
     padding-left:10px;
     padding-right:10px;
-    bottom:0;
+    margin-bottom:50px;
     max-width: 900px;
     width: 100%;
+}
+.preview h2 {
+    padding-left: 13px;
 }
 article h1{
     margin-top: 0;
@@ -89,15 +101,35 @@ footer {
   color: #699;
   text-align: center;
 }
-img {
+img.ma-rotesc {
     max-width: 100%;
     height: auto;
     width: auto\9;
     border-radius: 50%;
   -webkit-transition: -webkit-transform .8s ease-in-out;
           transition:         transform .8s ease-in-out;
-}
-img:hover {
+} 
+img.ma-rotesc:hover {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
+
+.display-left {
+    position:absolute;
+    top:40%;
+    left:0%;
+    transform:translate(0%,-50%);
+    -ms-transform:translate(-0%,-50%)
+}
+.display-right {
+    position:absolute;
+    top:40%;
+    right:0%;
+    transform:translate(0%,-50%);
+    -ms-transform:translate(0%,-50%)
+}
+.black,.hover-black:hover {
+    color:#fff!important;
+    background-color:#000!important;
+}
+
